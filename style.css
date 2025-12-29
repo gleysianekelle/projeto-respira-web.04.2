@@ -1,0 +1,155 @@
+* {
+      margin: 0;
+        padding: 0;
+          box-sizing: border-box;
+          }
+
+          /* BASE */
+          body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+              min-height: 100vh;
+                display: grid;
+                  place-items: center;
+                    transition: background-color 0.6s ease, color 0.6s ease;
+                    }
+
+                    /* GRID */
+                    .container {
+                      display: grid;
+                        place-items: center;
+                          padding: 2rem;
+                          }
+
+                          .card {
+                            display: grid;
+                              gap: 1.6rem;
+                                text-align: center;
+                                  max-width: 340px;
+                                  }
+
+                                  /* TELAS */
+                                  .tela {
+                                    display: none;
+                                    }
+
+                                    .tela-ativa {
+                                      display: grid;
+                                      }
+
+                                      /* TEXTO */
+                                      .intro {
+                                        font-size: 0.9rem;
+                                          opacity: 0.65;
+                                          }
+
+                                          .respira-texto {
+                                            font-size: 2.6rem;
+                                              font-weight: 500;
+                                                letter-spacing: 0.08em;
+                                                  animation: respirar 6s ease-in-out infinite;
+                                                  }
+
+                                                  .frase {
+                                                    font-size: 1rem;
+                                                      opacity: 0.75;
+                                                      }
+
+                                                      .titulo-config {
+                                                        font-size: 1.1rem;
+                                                          font-weight: 500;
+                                                            opacity: 0.85;
+                                                            }
+
+                                                            /* BOTÕES */
+                                                            .controles {
+                                                              display: grid;
+                                                                gap: 0.6rem;
+                                                                  margin-top: 1rem;
+                                                                  }
+
+                                                                  .botao-primario {
+                                                                    margin-top: 1.2rem;
+                                                                      padding: 0.7rem 1.4rem;
+                                                                        border-radius: 999px;
+                                                                          border: none;
+                                                                            background-color: currentColor;
+                                                                              color: inherit;
+                                                                                font-size: 0.85rem;
+                                                                                  cursor: pointer;
+                                                                                    opacity: 0.75;
+                                                                                    }
+
+                                                                                    .botao-primario:hover {
+                                                                                      opacity: 1;
+                                                                                      }
+
+                                                                                      .botao-secundario {
+                                                                                        padding: 0.6rem 1.2rem;
+                                                                                          border-radius: 999px;
+                                                                                            border: 1px solid currentColor;
+                                                                                              background: transparent;
+                                                                                                font-size: 0.85rem;
+                                                                                                  cursor: pointer;
+                                                                                                    opacity: 0.7;
+                                                                                                    }
+
+                                                                                                    .botao-secundario:hover {
+                                                                                                      opacity: 1;
+                                                                                                      }
+
+                                                                                                      /* ANIMAÇÃO */
+                                                                                                      @keyframes respirar {
+                                                                                                        0% { opacity: 0.4; }
+                                                                                                          50% { opacity: 1; }
+                                                                                                            100% { opacity: 0.4; }
+                                                                                                            }
+
+                                                                                                            /* MODO CLARO */
+                                                                                                            body.light {
+                                                                                                              background-color: #FAF6F7;
+                                                                                                                color: #4A4A4A;
+                                                                                                                }
+
+                                                                                                                .light .respira-texto {
+                                                                                                                  color: #C97CA6;
+                                                                                                                  }
+
+                                                                                                                  /* MODO ESCURO */
+                                                                                                                  body.dark {
+                                                                                                                    background-color: #0F172A;
+                                                                                                                      color: #E5E7EB;
+                                                                                                                      }
+
+                                                                                                                      .dark .respira-texto {
+                                                                                                                        color: #7AA2C7;
+                                                                                                                        }
+
+                                                                                                                        /* CHUVISCO (só no escuro) */
+                                                                                                                        .chuva {
+                                                                                                                          position: fixed;
+                                                                                                                            inset: 0;
+                                                                                                                              pointer-events: none;
+                                                                                                                                opacity: 0;
+                                                                                                                                }
+
+                                                                                                                                body.dark .chuva {
+                                                                                                                                  opacity: 0.16;
+                                                                                                                                    background-image: repeating-linear-gradient(
+                                                                                                                                        transparent,
+                                                                                                                                            transparent 12px,
+                                                                                                                                                rgba(255,255,255,0.08) 13px
+                                                                                                                                                  );
+                                                                                                                                                    animation: chuva 16s linear infinite;
+                                                                                                                                                    }
+
+                                                                                                                                                    @keyframes chuva {
+                                                                                                                                                      from { background-position: 0 0; }
+                                                                                                                                                        to { background-position: 0 100%; }
+                                                                                                                                                        }
+
+                                                                                                                                                        /* ACESSIBILIDADE */
+                                                                                                                                                        body.reduzir-animacoes * {
+                                                                                                                                                          animation: none !important;
+                                                                                                                                                            transition: none !important;
+                                                                                                                                                            }
+}
